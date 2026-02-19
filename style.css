@@ -1,0 +1,539 @@
+/* premium-church-theme.css */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #0f172a; /* Deep Navy */
+  --accent-color: #d4af37; /* Metallic Gold */
+  --accent-hover: #f2c94c;
+  --text-light: #f8fafc;
+  --text-dark: #1e293b;
+  --bg-light: #ffffff;
+  --bg-off-white: #f1f5f9;
+  --transition: all 0.3s ease;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: var(--bg-off-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* Header */
+header {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: var(--transition);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
+    url("media/dairi parongil.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+  padding: 0 1rem;
+  position: relative; /* Needed for the fade effect overlay */
+}
+
+.hero-sub {
+  height: 85vh !important;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* Height of the fade */
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  pointer-events: none;
+}
+
+.hero-sub::after {
+  background: linear-gradient(to bottom, transparent, #f1f5f9);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Congregations Section */
+.congregations {
+  padding: 5rem 5%;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+}
+
+.section-header .divider {
+  width: 80px;
+  height: 3px;
+  background: var(--accent-color);
+  margin: 1rem auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+  height: 200px;
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.youth-logo-container {
+  height: 250px; /* Increased height */
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  gap: 1.5rem;
+}
+
+.youth-logo-container img {
+  max-width: 45%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .youth-logo-container img {
+  transform: scale(1.05); /* Gentle scale for logos */
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.card-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.card-link {
+  color: var(--primary-color);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-link i {
+  transition: transform 0.3s;
+}
+
+.card-link:hover i {
+  transform: translateX(5px);
+}
+
+/* Footer */
+footer {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 3rem 5%;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  margin: 0 1rem;
+  opacity: 0.8;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--accent-color);
+}
+
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Header & Nav */
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    min-height: 60vh;
+    padding: 6rem 1rem 4rem; /* Added top padding for fixed header */
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-content img {
+    width: 100% !important; /* Override inline width */
+    max-width: 300px;
+  }
+
+  /* Sections */
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 3rem 5%;
+  }
+
+  /* Org Chart */
+  .org-node {
+    min-width: unset; /* Remove fixed min-width */
+    width: 90%; /* Use percentage width */
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .org-connector {
+    height: 20px;
+  }
+
+  .org-list {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .org-item {
+    width: 90%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  /* Contact */
+  #contact h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem; /* Adjusted size */
+    flex-direction: column; /* Stack icon and text */
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .logo-text {
+    white-space: nowrap; /* Keep text on one line */
+  }
+
+  .logo img {
+    height: 50px !important; /* Adjusted size */
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Organizational Structure */
+.org-structure {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.org-node {
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  font-weight: 600;
+  color: var(--primary-color);
+  min-width: 300px;
+  max-width: 90%;
+  position: relative;
+  z-index: 2;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.org-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+}
+
+.org-node.highlight {
+  background: var(--primary-color);
+  color: white;
+  border: 2px solid var(--accent-color);
+}
+
+.org-connector {
+  height: 30px;
+  width: 2px;
+  background: var(--accent-color);
+  margin: 2px 0;
+  position: relative;
+}
+
+.org-connector::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--accent-color);
+}
+
+.org-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 900px;
+}
+
+.org-item {
+  background: #f8fafc;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  transition: var(--transition);
+}
+
+.org-item:hover {
+  background: white;
+  border-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* Hide Scrollbar but keep functionality */
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* For Firefox and IE/Edge */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+/* Fix anchor scroll offset due to sticky header */
+section[id] {
+  scroll-margin-top: 100px;
+}
