@@ -102,15 +102,25 @@
             style="
               display: flex;
               justify-content: space-between;
+              align-items: flex-start;
+              gap: 1rem;
               padding: 1rem 0;
               border-bottom: 1px solid #f1f5f9;
             "
           >
-            <strong
-              >Vesper (Minggu 1 tiap bulan di Gereja)/ Buka Sabat (Rumah
-              Jemaat)</strong
-            >
-            <span>08:00 WIB</span>
+            <div>
+              <strong style="display: block">Vesper</strong>
+              <small
+                style="
+                  display: block;
+                  color: #64748b;
+                  font-size: 0.9em;
+                  line-height: 1.4;
+                "
+                >Minggu 1 di Gereja<br />Minggu 2-4 di Rumah Jemaat</small
+              >
+            </div>
+            <span style="white-space: nowrap; flex-shrink: 0">08:00 WIB</span>
           </li>
           <li
             style="
@@ -201,4 +211,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
