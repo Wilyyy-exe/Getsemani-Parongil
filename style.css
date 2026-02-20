@@ -537,3 +537,53 @@ html {
 section[id] {
   scroll-margin-top: 100px;
 }
+
+/* About Section Responsive Fixes */
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+.about-logos {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.about-logos img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column-reverse; /* Stack text below logos */
+    align-items: center; /* Center everything */
+    text-align: center;
+  }
+
+  .about-logos {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem; /* Add space between logos and text */
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 300px; /* Increased to account for taller header layout on mobile */
+  }
+}
